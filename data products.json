@@ -1,0 +1,56 @@
+[
+  {
+    "id": "p1",
+    "title": "Midnight Neon Skyline",
+    "category": "New Arrivals",
+    "price": 349,
+    "sizes": ["A3", "A2"],
+    "tags": ["neon", "city", "aesthetic"],
+    "image": "https://images.pexels.com/photos/313782/pexels-photo-313782.jpeg"
+  },
+  {
+    "id": "p2",
+    "title": "Drive Fast – JDM Legend",
+    "category": "Cars & Bikes",
+    "price": 399,
+    "sizes": ["A4", "A3", "A2"],
+    "tags": ["cars", "jdm"],
+    "image": "https://images.pexels.com/photos/1149831/pexels-photo-1149831.jpeg"
+  },
+  {
+    "id": "p3",
+    "title": "Hustle Mode ON",
+    "category": "Motivational",
+    "price": 299,
+    "sizes": ["A4", "A3"],
+    "tags": ["quotes", "gym"],
+    "image": "https://images.pexels.com/photos/1552103/pexels-photo-1552103.jpeg"
+  },
+  {
+    "id": "p4",
+    "title": "Retro Sunset Vibes",
+    "category": "Pop Culture",
+    "price": 329,
+    "sizes": ["A4", "A3"],
+    "tags": ["retro", "vaporwave"],
+    "image": "https://images.pexels.com/photos/799443/pexels-photo-799443.jpeg"
+  },
+  {
+    "id": "p5",
+    "title": "Cosmic Samurai",
+    "category": "Anime",
+    "price": 379,
+    "sizes": ["A3", "A2"],
+    "tags": ["anime", "samurai"],
+    "image": "https://images.pexels.com/photos/2994412/pexels-photo-2994412.jpeg"
+  },
+  {
+    "id": "p6",
+    "title": "Minimal Lines",
+    "category": "Minimal",
+    "price": 249,
+    "sizes": ["A4"],
+    "tags": ["minimal", "abstract"],
+    "image": "https://images.pexels.com/photos/814499/pexels-photo-814499.jpeg"
+  }
+]

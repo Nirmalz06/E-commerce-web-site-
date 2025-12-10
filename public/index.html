@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Trizoverze | Posters That Match Your Vibe</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="page">
+    <!-- Navbar -->
+    <header class="navbar">
+      <div class="nav-left">
+        <div class="brand">
+          <span class="brand-logo">TZ</span>
+          <span class="brand-text">
+            <span class="brand-name">Trizoverze</span>
+            <span class="brand-tagline">Posters that vibe with you.</span>
+          </span>
+        </div>
+        <nav class="nav-links">
+          <a href="#shop">Shop Posters</a>
+          <a href="#categories">Categories</a>
+          <a href="#about">Why Trizoverze?</a>
+        </nav>
+      </div>
+      <div class="nav-right">
+        <button class="nav-icon-btn" id="search-toggle" aria-label="Search">
+          🔍
+        </button>
+        <button class="nav-icon-btn" id="cart-button" aria-label="Cart">
+          🛒 <span id="cart-count" class="cart-count">0</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Search Bar -->
+    <section class="search-bar" id="search-bar">
+      <input
+        type="text"
+        id="search-input"
+        placeholder="Search posters… (e.g. car, anime, neon)"
+      />
+      <button id="search-clear" class="pill-btn pill-btn-ghost">Clear</button>
+    </section>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-content">
+        <p class="hero-badge">India • Online Poster Store</p>
+        <h1>
+          Fill your walls with
+          <span class="hero-highlight">Trizoverze</span>
+          energy.
+        </h1>
+        <p class="hero-subtitle">
+          Curated car, anime, motivational and pop culture posters printed on
+          premium 300 GSM art paper. Built for bedrooms, studios & battlestations.
+        </p>
+        <div class="hero-actions">
+          <a href="#shop" class="pill-btn pill-btn-primary">Shop Best Sellers</a>
+          <a href="#categories" class="pill-btn pill-btn-ghost">Browse Categories</a>
+        </div>
+        <div class="hero-meta">
+          <span>⚡ COD on selected orders</span>
+          <span>🔥 Matte & gloss finish options</span>
+          <span>🛡️ Made in India</span>
+        </div>
+      </div>
+      <div class="hero-preview">
+        <div class="hero-card hero-card-main">
+          <div class="hero-card-image"></div>
+          <div class="hero-card-info">
+            <div>
+              <h3>Midnight Neon Skyline</h3>
+              <p>Best Selling • New</p>
+            </div>
+            <div class="hero-card-price">
+              <span class="price">₹349</span>
+              <span class="price-strike">₹599</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero-card hero-card-secondary">
+          <p>Over 100+ designs dropping soon on Trizoverze.</p>
+          <span class="pill-badge">Posters • Collage Kits • Splits</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Categories -->
+    <section id="categories" class="section">
+      <div class="section-header">
+        <h2>Shop by Vibe</h2>
+        <p>Pick a mood. We’ll handle the walls.</p>
+      </div>
+      <div class="category-grid">
+        <button class="category-card" data-filter="All">
+          <span class="category-label">All Posters</span>
+          <span class="category-chip">View all</span>
+        </button>
+        <button class="category-card" data-filter="New Arrivals">
+          <span class="category-label">New Arrivals</span>
+          <span class="category-chip">Fresh drops</span>
+        </button>
+        <button class="category-card" data-filter="Cars & Bikes">
+          <span class="category-label">Cars & Bikes</span>
+          <span class="category-chip">JDM • F1 • Superbikes</span>
+        </button>
+        <button class="category-card" data-filter="Motivational">
+          <span class="category-label">Motivational</span>
+          <span class="category-chip">Grind • Gym • Hustle</span>
+        </button>
+        <button class="category-card" data-filter="Pop Culture">
+          <span class="category-label">Pop Culture</span>
+          <span class="category-chip">Movies • Music • Games</span>
+        </button>
+        <button class="category-card" data-filter="Anime">
+          <span class="category-label">Anime</span>
+          <span class="category-chip">Samurai • Shonen</span>
+        </button>
+        <button class="category-card" data-filter="Minimal">
+          <span class="category-label">Minimal</span>
+          <span class="category-chip">Clean • Aesthetic</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- Shop -->
+    <section id="shop" class="section">
+      <div class="section-header">
+        <h2>Best Sellers</h2>
+        <p>Trizoverze picks that always look good on your wall.</p>
+      </div>
+      <div id="product-grid" class="product-grid">
+        <!-- products injected by JS -->
+      </div>
+      <div id="empty-state" class="empty-state hidden">
+        <p>No posters found. Try another keyword or category.</p>
+      </div>
+    </section>
+
+    <!-- Why Trizoverze -->
+    <section id="about" class="section section-muted">
+      <div class="section-header">
+        <h2>Why Trizoverze?</h2>
+        <p>Built for students, gamers, creators & anyone with a blank wall.</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <h3>Premium Prints</h3>
+          <p>300 GSM art paper with rich colors & sharp details that last.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Perfect Sizing</h3>
+          <p>A4, A3 and A2 options so your posters fit dorms, rooms or studios.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Protected Shipping</h3>
+          <p>Rolled in crush-proof tubes to reach you safely, every time.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Made in India</h3>
+          <p>Printed and packed locally with love, shipped across India.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-main">
+        <div>
+          <h3>Trizoverze</h3>
+          <p>Posters that turn bedrooms into battlestations.</p>
+        </div>
+        <div class="footer-links">
+          <div>
+            <h4>Shop</h4>
+            <a href="#shop">All Posters</a>
+            <a href="#categories">By Category</a>
+          </div>
+          <div>
+            <h4>Support</h4>
+            <a href="#">Contact</a>
+            <a href="#">Shipping & Returns</a>
+            <a href="#">FAQs</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="year"></span> Trizoverze. All rights reserved.</span>
+        <span>Built with HTML • CSS • JS • Node.js</span>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Cart Drawer -->
+  <div class="cart-overlay hidden" id="cart-overlay"></div>
+  <aside class="cart-drawer hidden" id="cart-drawer">
+    <div class="cart-header">
+      <h2>Your Cart</h2>
+      <button class="pill-btn pill-btn-ghost" id="cart-close">Close</button>
+    </div>
+    <div id="cart-items" class="cart-items">
+      <!-- cart items injected by JS -->
+    </div>
+    <div class="cart-footer">
+      <div class="cart-summary">
+        <span>Subtotal</span>
+        <span class="cart-total">₹<span id="cart-total">0</span></span>
+      </div>
+      <button class="pill-btn pill-btn-primary full-width" id="checkout-btn">
+        Checkout (Demo)
+      </button>
+      <p class="cart-note">
+        This is a demo checkout. Integrate Razorpay / Stripe / COD flow on backend later.
+      </p>
+    </div>
+  </aside>
+
+  <script src="app.js"></script>
+</body>
+</html>

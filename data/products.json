@@ -1,0 +1,38 @@
+[
+  {
+    "id": "p1",
+    "title": "Midnight Neon Skyline",
+    "price": 349,
+    "category": "Cars & Bikes",
+    "image": "images/midnight-neon.jpg",
+    "description": "A neon skyline poster perfect for bedrooms and studios.",
+    "stock": 12
+  },
+  {
+    "id": "p2",
+    "title": "Celestial Anime Drift",
+    "price": 299,
+    "category": "Anime",
+    "image": "images/celestial-anime.jpg",
+    "description": "Anime-inspired art with cosmic color palettes.",
+    "stock": 8
+  },
+  {
+    "id": "p3",
+    "title": "Motivation: Grind Mode",
+    "price": 249,
+    "category": "Motivational",
+    "image": "images/grind-mode.jpg",
+    "description": "Minimal motivational poster to keep you focused.",
+    "stock": 20
+  },
+  {
+    "id": "p4",
+    "title": "Minimalist Wave",
+    "price": 199,
+    "category": "Minimal",
+    "image": "images/minimal-wave.jpg",
+    "description": "Clean lines and calming tones for modern spaces.",
+    "stock": 15
+  }
+]
