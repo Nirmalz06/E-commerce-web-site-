@@ -324,9 +324,23 @@ cartClose.addEventListener("click", closeCart);
 cartOverlay.addEventListener("click", closeCart);
 
 checkoutBtn.addEventListener("click", () => {
-  alert(
-    "This is a demo checkout.\n\nIn your Node backend you can integrate Razorpay / Stripe / COD, and send this cart data to the server."
-  );
+  if (!cart.length) {
+    alert("Your cart is empty!");
+    return;
+  }
+
+  let message = "Hi, I am interested in ordering these posters:\n\n";
+
+  cart.forEach((item, index) => {
+    message += `${index + 1}. ${item.title} (${item.size}) - Qty: ${item.qty} - ₹${item.price * item.qty}\n`;
+  });
+
+  const total = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
+  message += `\nTotal: ₹${total}\n\nPlease let me know about payment details.`;
+
+  const whatsappURL = `https://wa.me/918124125555?text=${encodeURIComponent(message)}`;
+
+  window.open(whatsappURL, "_blank");
 });
 
 // Category filter buttons

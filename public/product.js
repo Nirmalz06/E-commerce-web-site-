@@ -1,80 +1,60 @@
-// Extract product ID from URL
+// product.js
 const urlParams = new URLSearchParams(window.location.search);
-const productId = urlParams.get("id");
+const productId = urlParams.get('id');
 
-const container = document.getElementById("product-container");
+if (!productId) {
+  document.getElementById("product-container").innerHTML = "<p>Product not found.</p>";
+} else {
+  fetch(`/api/products/${productId}`)
+    .then(res => res.json())
+    .then(product => {
+      if (product.message) {
+        document.getElementById("product-container").innerHTML = "<p>Product not found.</p>";
+        return;
+      }
 
-// Load product data from backend
-async function loadProduct(){
-    const res = await fetch("/api/products/" + productId);
-    const p = await res.json();
+      const container = document.getElementById("product-container");
 
-    container.innerHTML = `
-      <div class="pd-image">
-        <img src="${p.image}" alt="${p.title}">
-      </div>
+      container.innerHTML = `
+        <div class="product-detail">
+          <img src="${product.image}" alt="${product.title}" class="product-img"/>
 
-      <div>
-        <h1 class="pd-title">${p.title}</h1>
+          <div class="product-info">
+            <h1>${product.title}</h1>
+            <p>${product.description}</p>
+            <p class="price">₹${product.price}</p>
 
-        <p class="pd-price">₹${p.price}</p>
+            <label for="size">Select Size</label>
+            <select id="size">
+              <option value="A4">A4</option>
+              <option value="A3">A3</option>
+              <option value="A2">A2</option>
+            </select>
 
-        <div class="pd-sizes">
-          <label for="sizeSel">Choose Size:</label>
-          <select id="sizeSel">
-            ${p.sizes.map(s => `<option value="${s}">${s}</option>`).join("")}
-          </select>
+            <button id="checkoutBtn" class="checkout-btn">
+              Order via WhatsApp
+            </button>
+          </div>
         </div>
+      `;
 
-        <button class="pill-btn pill-btn-primary pd-addcart" id="addBtn">
-          Add to Cart
-        </button>
-      </div>
-    `;
+      // WhatsApp redirect logic
+      document.getElementById("checkoutBtn").addEventListener("click", () => {
+        const selectedSize = document.getElementById("size").value;
 
-    document.getElementById("addBtn").addEventListener("click", () => addToCart(p));
+        const message = `Hi, I am interested in ordering a poster.
+Poster Name: ${product.title}
+Size: ${selectedSize}
+Price: ₹${product.price}`;
+
+        const whatsappURL =
+          `https://wa.me/918124125555?text=${encodeURIComponent(message)}`;
+
+        window.open(whatsappURL, "_blank");
+      });
+    })
+    .catch(err => {
+      console.error("Error fetching product:", err);
+      document.getElementById("product-container").innerHTML = "<p>Unable to load product. Please try again later.</p>";
+    });
 }
-
-// CART LOGIC
-function loadCart(){
-    try{
-        return JSON.parse(localStorage.getItem("trizoverze-cart")) || [];
-    }catch{
-        return [];
-    }
-}
-
-function saveCart(cart){
-    localStorage.setItem("trizoverze-cart", JSON.stringify(cart));
-}
-
-function addToCart(product){
-    const size = document.getElementById("sizeSel").value;
-
-    let cart = loadCart();
-
-    // Unique key: product + size
-    const key = product.id + "-" + size;
-
-    const existing = cart.find(item => item.key === key);
-
-    if(existing){
-        existing.qty += 1;
-    } else {
-        cart.push({
-            key,
-            id: product.id,
-            title: product.title,
-            image: product.image,
-            price: product.price,
-            size,
-            qty: 1
-        });
-    }
-
-    saveCart(cart);
-
-    alert("Item added to cart!");
-}
-
-loadProduct();
